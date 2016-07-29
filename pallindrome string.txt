@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100], str1[100], str2[100];
+    int i,a ;
+    
+    
+    scanf("%s", &str);		/*Input a string*//*example: :  DesDfdsEdf */
+    
+  for(i=0 ; str[i] ;i++)
+   {
+    str[i] = tolower(str[i]);   /* Making all enetered letter of input string to be of lower case *//*i.e, desdfdsedf */
+   }
+  
+   
+    a = strlen(str);		/*lenght of the string (str)*/ /* 9 */
+    for(i=0 ; i<=a-1 ;i++)
+    {
+        str1[i] = str[i];	/*Copying the string str to str1*/ /* copying desdfdsedf to str1 */
+    }
+    
+    for(i=a-1 ; i>=0 ; i--)
+    {
+        str2[i] = str[a-i-1];	/*Copying the string str to str2 but in reverse manner*/ /* copying fdesedfdsed to str2 */
+    }
+    
+    for(i=0 ; i<=a ; i++)
+    {
+     if(str1[i]==str2[i])   	/* Comparing both the strings (str1, str2)*/
+    {
+      printf("YES");  
+    }
+    else
+    {
+    printf("NO");
+    }
+    return 0;
+    }
+}
